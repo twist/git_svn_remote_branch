@@ -2,8 +2,8 @@
 TMPFILE="/tmp/prepare_commit_$$.tmp" 
 
 cat $1 > $TMPFILE
-echo  "commiting to:" | cat > $1
-git svn info | grep "URL" >> $1  
+echo  "# commiting to:" | cat > $1
+echo "# `git svn info | grep URL`" >> $1  
 cat $TMPFILE >> $1
 
 rm $TMPFILE
